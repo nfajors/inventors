@@ -1,5 +1,6 @@
 /* ============================================================
-   MILESTONES — the feed under the stages, newest first by date, and the
+   MILESTONES — the feed under the stages, shown oldest first (the page
+   sorts by date, so the order here does not matter), and the
    "By the numbers" tiles.
    WINS fields: date (YYYY, YYYY-MM, or YYYY-MM-DD), who, what, detail,
    to (a section id or URL), source.

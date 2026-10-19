@@ -277,7 +277,7 @@ function renderStories() {
       ? '<a href="' + esc(st.to) + '" target="_blank" rel="noopener">' + esc(st.cta || 'Read more') + ' ↗</a>'
       : '<button onclick="scrollToSection(\'' + esc(st.to) + '\')">' + esc(st.cta || 'Read more') + ' →</button>';
     return '<article class="story">'
-      + '<div class="story-top"><span class="story-phase">Stage ' + st.stage + '</span></div>'
+      + '<div class="story-top"><span class="story-phase">' + esc(st.kind) + '</span></div>'
       + '<h3>' + esc(st.name) + '</h3><div class="story-who">' + esc(st.who) + '</div>'
       + '<p>' + esc(st.text) + '</p>' + (st.source ? '<p class="story-source">Source: ' + esc(st.source) + '</p>' : '')
       + '<div class="story-cta">' + link + '</div></article>';
@@ -421,8 +421,9 @@ function sectionName(id) {
 function renderWins() {
   var feed = byId('winsFeed');
   if (!feed || typeof WINS === 'undefined') return;
-  var sorted = WINS.slice().sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); });
-  feed.innerHTML = sorted.slice(0, 10).map(function (w) {
+  // The ten newest milestones, shown oldest first so the feed reads as a story.
+  var sorted = WINS.slice().sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); }).slice(0, 10).reverse();
+  feed.innerHTML = sorted.map(function (w) {
     var link = !w.to ? '' : isExternal(w.to)
       ? '<a href="' + esc(w.to) + '" target="_blank" rel="noopener">Read more ↗</a>'
       : '<button onclick="scrollToSection(\'' + esc(w.to) + '\')">' + esc(sectionName(w.to)) + ' →</button>';
