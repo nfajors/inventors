@@ -22,7 +22,7 @@
    ============================================================ */
 const OPPORTUNITIES = [
   { name: 'Invention Jamboree 2027', org: 'Great Rivers Council · Sinquefield Invention Campus', type: 'Event', stage: 3,
-    url: 'https://inventionscouts.org/',
+    url: 'https://lakeoftheozarksscoutreservation.org/about/sinquefield-invention-campus/',
     cycle: 'tbd', season: 'Usually early October in odd-numbered years. The 2025 Jamboree ran October 3–5.', confirmed: false,
     note: 'A weekend of invention stations, inventors and engineers to talk to, and the Inventing merit badge. Open to Scouts from Missouri\'s councils.' },
   { name: 'Summer camp and the Startup program', org: 'Lake of the Ozarks Scout Reservation', type: 'Camp', stage: 3,
@@ -38,11 +38,11 @@ const OPPORTUNITIES = [
     cycle: 'rolling', confirmed: true,
     note: 'Sessions run through the year in the four arenas. Check the council calendar and register through your unit.' },
   { name: 'Council invention competition', org: 'Great Rivers Council with Trulaske CEI', type: 'Competition', stage: 3,
-    url: 'https://inventionscouts.org/',
+    url: 'https://greatriversscouting.org/',
     cycle: 'tbd', season: 'Proposed. Unit and district rounds would feed a council final.', confirmed: false,
     note: 'The competition ladder runs unit → district → council → area → national. The practice rubric in the Playbook shows how judges are likely to score.' },
   { name: 'Invention Scouts Awards Day', org: 'Scouting Adventure Center, Columbia', type: 'Event', stage: 4,
-    url: 'https://inventionscouts.org/',
+    url: 'https://greatriversscouting.org/',
     cycle: 'tbd', season: 'Proposed for October in years without a Jamboree, starting 2028.', confirmed: false,
     note: 'Ladder rungs presented, the award slate, and council competition finals, in the Adventure Center\'s main hall.' }
 ];

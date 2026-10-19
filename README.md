@@ -76,7 +76,7 @@ This edition is a reviewable first draft. These are open, and each is marked in 
 1. **Who receives the emails.** "I built something", mentor requests, and nominations go to `SITE.email` (currently `cei@missouri.edu`). Confirm with the council, or point `builtUrl` / `mentorUrl` / `nominationUrl` at forms.
 2. **Ladder names and requirements.** The ladder is labeled "pilot". If Invention Scouts already has its own levels, rename the rungs in `data/ladder.js`; the page follows.
 3. **Consent for named Scouts.** The Chess2Go story (Life Scout Sam Goldstein) and John Hayes's story come from public sources (the World Chess Hall of Fame and the council's 2025 Annual Report). Confirm the families are happy to be featured before the page is announced.
-4. **Program links.** Several council programs point at `greatriversscouting.org` or `inventionscouts.org` until program-specific pages are confirmed.
+4. **Program links.** Several council programs point at `greatriversscouting.org` or the Sinquefield Invention Campus page until program-specific pages are confirmed. `inventionscouts.org` (cited in Dr. Sinquefield's editorial) refused connections in October 2026, so nothing links to it; if it comes back, set `SITE.programUrl` and the program cards to it.
 5. **Dates.** Every council date is "to be announced" until the council confirms it.
 6. **Hosting and credit.** Whether the guidebook lives here, under inventionscouts.org, or both, and how Invention Scouts and Dr. Sinquefield want to be credited.
 7. **Badge pages.** Badge links use the scouting.org pattern `/merit-badges/<name>/`; the weekly link check will flag any that differ. Have the council's advancement chair review the badge map.

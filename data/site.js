@@ -30,7 +30,9 @@ const SITE = {
   councilUrl: 'https://greatriversscouting.org/',
   councilPhone: '573-449-2561',
   councilPhoneHref: 'tel:+15734492561',
-  programUrl: 'https://inventionscouts.org/',
+  /* inventionscouts.org refused connections in October 2026, so the program
+     link points at the Invention Campus page until it is back. */
+  programUrl: 'https://lakeoftheozarksscoutreservation.org/about/sinquefield-invention-campus/',
   partnerUrl: 'https://business.missouri.edu/centers-institutes/center-entrepreneurship-and-innovation',
   feedbackUrl: null,       // a feedback form; null falls back to an email to `email`
 

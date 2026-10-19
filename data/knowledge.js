@@ -32,7 +32,6 @@ const KNOWLEDGE = [
     note: 'Invention Scouts was started by <strong>Dr. Jeanne Cairns Sinquefield</strong> within the Great Rivers Council after two high-school inventors told her what held them back: equipment, and mentors.',
     items: [
       { text: 'Sinquefield, "The Importance of Mentorship in the Innovation Space" (Technology and Innovation, 2026)', url: 'https://doi.org/10.1080/19498241.2025.2609530' },
-      { text: 'Invention Scouts', url: 'https://inventionscouts.org/' },
       { text: 'The Sinquefield Invention Campus', url: 'https://lakeoftheozarksscoutreservation.org/about/sinquefield-invention-campus/' },
       { text: 'Great Rivers Council, Scouting America', url: 'https://greatriversscouting.org/' }
     ]
