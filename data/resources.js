@@ -69,7 +69,7 @@ const RESOURCES = [
   {
     id: 'startup-program',
     name: 'Invention Scouts Startup program',
-    url: 'https://inventionscouts.org/',
+    url: 'https://lakeoftheozarksscoutreservation.org/about/sinquefield-invention-campus/',
     tag: 'Program',
     blurb: 'At summer camp, small teams pick an invention, build a prototype with the camp\'s equipment, write a business plan with marketing and sales, and pitch it, with adult mentors alongside. Not everyone becomes an inventor; everyone learns to work as a team.',
     keywords: 'summer camp team pitch business plan prototype',
@@ -81,7 +81,7 @@ const RESOURCES = [
   {
     id: 'invention-jamboree',
     name: 'Invention Jamboree',
-    url: 'https://inventionscouts.org/',
+    url: 'https://lakeoftheozarksscoutreservation.org/about/sinquefield-invention-campus/',
     tag: 'Event',
     blurb: 'A weekend at the Invention Campus every other October. In 2025, nearly 200 Scouts from Missouri\'s five councils rotated through laser, 3D-printing, metalworking, and electronics stations, met working inventors and engineers, and more than 100 earned Inventing.',
     keywords: 'jamboree october lake competition inventing badge',
@@ -93,7 +93,7 @@ const RESOURCES = [
   {
     id: 'invention-rangers',
     name: 'Invention Rangers',
-    url: 'https://inventionscouts.org/',
+    url: 'https://lakeoftheozarksscoutreservation.org/about/sinquefield-invention-campus/',
     tag: 'Mentors',
     blurb: 'Adult leaders trained on the equipment and on how to run Invention Scouts back home. If your unit has a Ranger, they are the first adult to show your notebook to. If it does not, ask your Scoutmaster to become one.',
     keywords: 'adult leader training ranger advisor unit',
