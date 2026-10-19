@@ -137,7 +137,7 @@ const BADGES = [
     where: 'Merit badge sessions; alumni attorneys can counsel',
     url: 'https://www.scouting.org/merit-badges/law/' },
   { id: 'chess', name: 'Chess', tier: 'emerging', stages: [1],
-    why: 'Thinking several moves ahead. Dr. Sinquefield persuaded the BSA to create this badge in 2011, and Chess2Go, the founding story of Invention Scouts, is a portable chess set.',
+    why: 'Thinking several moves ahead. Dr. Sinquefield persuaded the BSA to create this badge, launched in September 2011 at the World Chess Hall of Fame, and Chess2Go, the founding story of Invention Scouts, is a portable chess set.',
     where: 'Merit badge sessions',
     url: 'https://www.scouting.org/merit-badges/chess/' }
 ];

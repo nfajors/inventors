@@ -422,7 +422,7 @@ function renderWins() {
   var feed = byId('winsFeed');
   if (!feed || typeof WINS === 'undefined') return;
   var sorted = WINS.slice().sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); });
-  feed.innerHTML = sorted.slice(0, 8).map(function (w) {
+  feed.innerHTML = sorted.slice(0, 10).map(function (w) {
     var link = !w.to ? '' : isExternal(w.to)
       ? '<a href="' + esc(w.to) + '" target="_blank" rel="noopener">Read more ↗</a>'
       : '<button onclick="scrollToSection(\'' + esc(w.to) + '\')">' + esc(sectionName(w.to)) + ' →</button>';

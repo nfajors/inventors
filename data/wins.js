@@ -29,7 +29,10 @@ const WINS = [
     to: 'stage-2', source: 'Sinquefield, Technology and Innovation (2026)' },
   { date: '2012', who: 'Chess2Go', what: 'was dreamed up at a Missouri campsite',
     detail: 'By a Life Scout, his Scoutmaster, and Dr. Jeanne Sinquefield. It became the founding story of Invention Scouts.',
-    to: 'stage-4', source: 'World Chess Hall of Fame' }
+    to: 'stage-4', source: 'World Chess Hall of Fame' },
+  { date: '2011-09-10', who: 'The Chess merit badge', what: 'was launched at the World Chess Hall of Fame in St. Louis',
+    detail: 'Dr. Jeanne Cairns Sinquefield persuaded the BSA to add chess as a merit badge. It was launched by the World Chess Hall of Fame and the Saint Louis Chess Club, with Rex Sinquefield and NASA astronaut Gregory E. Chamitoff.',
+    to: 'badges', source: 'Framed photograph and caption at the Scouting Adventure Center' }
 ];
 
 /* By the numbers. Every value has a source. `reported` tiles appear
