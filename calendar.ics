@@ -1,0 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Young Inventors Guidebook//Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The Young Inventor's Guidebook — dates
+X-WR-CALDESC:Confirmed Invention Scouts dates from The Young Inventor's G
+ uidebook. Unconfirmed dates are left out until verified. https://nfajors
+ .github.io/inventors/
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+END:VCALENDAR

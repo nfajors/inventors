@@ -1,0 +1,8 @@
+# Hosts that block automated checkers or need a login; verified by hand instead.
+https://www.linkedin.com/
+https://forms.gle/
+https://airtable.com/
+https://www.youtube.com/
+https://twitter.com/intent/
+# Local anchors and mail links handled by the page itself
+^#

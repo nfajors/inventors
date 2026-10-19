@@ -1,0 +1,1259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script>
+  // Analytics are off. This guidebook is written for Scouts aged 12 to 18, some
+  // under 13, so no tracking tag loads. track() is kept as a no-op so the page
+  // code stays the same as the CEI Guidebook's; see docs/PRIVACY.md before
+  // turning anything on.
+  function track() {}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Young Inventor's Guidebook · Invention Scouts</title>
+<meta name="description" content="How Scouts aged 12 to 18 go from noticing a problem to building, testing, and launching an invention. Stages, an inventor's notebook, the merit badge map, patrol challenges, mentors, and safety rules, from Invention Scouts and the Trulaske Center for Entrepreneurship & Innovation." />
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Center for Entrepreneurship & Innovation, Trulaske College of Business, University of Missouri, with Invention Scouts, Great Rivers Council" />
+<!-- Permanent address. Keep these in step with SITE.url in data/site.js (scripts/check-site.mjs verifies they match). -->
+<link rel="canonical" href="https://nfajors.github.io/inventors/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="The Young Inventor's Guidebook" />
+<meta property="og:title" content="The Young Inventor's Guidebook · Invention Scouts" />
+<meta property="og:description" content="You don't need a lab, a business, or a big idea to start inventing. How Scouts go from noticing a problem to building, testing, and launching a fix." />
+<meta property="og:url" content="https://nfajors.github.io/inventors/" />
+<meta property="og:image" content="https://nfajors.github.io/inventors/assets/img/og-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="The Young Inventor's Guidebook: Find it, Build it, Prove it, Launch it" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#13233A" />
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "The Young Inventor's Guidebook",
+  "url": "https://nfajors.github.io/inventors/",
+  "description": "A guidebook for Scouts aged 12 to 18 who want to invent: four stages, an inventor's notebook, the merit badge map, patrol challenges, mentors, and safety rules.",
+  "inLanguage": "en-US",
+  "audience": { "@type": "PeopleAudience", "suggestedMinAge": 12, "suggestedMaxAge": 18 },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Center for Entrepreneurship & Innovation, Robert J. Trulaske, Sr. College of Business",
+    "url": "https://business.missouri.edu/centers-institutes/center-entrepreneurship-and-innovation",
+    "parentOrganization": { "@type": "CollegeOrUniversity", "name": "University of Missouri", "url": "https://missouri.edu/" }
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/guidebook.css" />
+<link rel="stylesheet" href="assets/css/inventors.css" />
+</head>
+
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAV — links are rendered from SITE.nav (data/site.js) -->
+<nav class="nav" id="nav" aria-label="Primary navigation">
+  <div class="nav-inner">
+    <button class="logo-text" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+      YOUNG INVENTORS<span class="dot"> · </span>GUIDEBOOK
+    </button>
+    <div class="nav-links" id="navLinks"></div>
+    <button class="nav-cta" onclick="openAssessment()">⌖ Where am I?</button>
+    <button class="nav-toggle" id="navToggle" onclick="toggleMobileMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <div id="mobileMenuLinks" style="display: contents"></div>
+    <button class="mobile-menu-cta" onclick="mobileFindStage()">⌖ Where am I?</button>
+  </div>
+</nav>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">
+          <div class="line"></div>
+          <span class="label">Invention Scouts × Trulaske CEI</span>
+        </div>
+        <h1>The Young Inventor's<br /><span class="italic">Guidebook</span></h1>
+        <p class="hero-sub">You don't need a lab, a business, or a big idea to start inventing. You need a problem that bugs you and a notebook. This guidebook shows Scouts aged 12 to 18 how to find a problem worth solving, build a fix, prove it works for other people, and launch it, with the badges, tools, and mentors that help at every step.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="scrollToSection('stage-0')">I've never invented anything <span class="arrow">→</span></button>
+          <button class="btn-secondary" onclick="openAssessment()">⌖ I'm working on something</button>
+        </div>
+        <p class="hero-more"><button onclick="scrollToSection('stages')">Or see all five stages, curious to launch ↓</button></p>
+      </div>
+
+      <!-- An example notebook page: shows what the guidebook asks a Scout to keep -->
+      <div class="hero-notebook" aria-label="An example page from an inventor's notebook">
+        <div class="hn-page">
+          <div class="hn-head"><span>Inventor's Notebook</span><span>Example page</span></div>
+          <div class="hn-title">Frozen-ground tent-stake puller</div>
+          <div class="hn-problem"><b>Problem</b> Younger Scouts can't pull stakes out of frozen ground without bending them.</div>
+          <ol class="hn-entries">
+            <li><time>Nov 2</time><span class="hn-k">Talked to users</span> Asked 6 Scouts at the campout. 5 had bent a stake this year.</li>
+            <li><time>Nov 9</time><span class="hn-k">Built · v1</span> Bent-wire hook. Works, but hurts your hand.</li>
+            <li><time>Nov 16</time><span class="hn-k">Changed · v2</span> 3D-printed T-handle. 4 of 5 testers liked it. Handle cracked once.</li>
+            <li><time>Nov 23</time><span class="hn-k">Next</span> Thicker handle walls. Ask counselor about Inventing req.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- Founder quote and counts -->
+    <div class="quote-section">
+      <div class="quote-grid">
+        <div class="quote-card">
+          <div class="openquote" aria-hidden="true">“</div>
+          <p>We know that inventors are rare. But we need programs to find and grow them from an early age. You can think of Invention Scouts as a type of little league for inventors.</p>
+          <div class="quote-attr">
+            <div class="line"></div>
+            <div>
+              <div class="name">Dr. Jeanne Cairns Sinquefield</div>
+              <div class="role">Founder, Invention Scouts · <cite>Technology and Innovation</cite>, 2026</div>
+            </div>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat"><div class="num" id="stageCount">5</div><div class="lbl">Stages, curious to launch</div></div>
+          <div class="stat"><div class="num" id="challengeCount">9</div><div class="lbl">Patrol challenges</div></div>
+          <div class="stat"><div class="num" id="resourceCount">25</div><div class="lbl">Resources</div></div>
+          <div class="stat"><div class="num" id="inventorCount">11</div><div class="lbl">Inventors who started young</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVENTED IN SCOUTING — rendered from STORIES (data/stories.js) -->
+<section class="stories" id="stories" aria-labelledby="storiesHead">
+  <div class="stories-inner">
+    <h2 class="stories-head" id="storiesHead"><span class="dot" aria-hidden="true"></span>Invented in Scouting</h2>
+    <div class="stories-grid" id="storiesGrid"></div>
+  </div>
+</section>
+
+<!-- SPOTLIGHT — rendered from SPOTLIGHT (data/spotlight.js). Hidden when SPOTLIGHT is null. -->
+<section class="spotlight" id="spotlight" aria-labelledby="spotlightHead" hidden></section>
+
+<!-- WHAT'S NEW -->
+<div class="whatsnew" id="whatsnew">
+  <div class="whatsnew-inner">
+    <div class="whatsnew-head"><span class="dot"></span>What's new</div>
+    <ul class="whatsnew-list" id="whatsnewList"></ul>
+  </div>
+</div>
+
+<!-- STAGES — overview grid and stage blocks are rendered from STAGES (data/stages.js) -->
+<section class="section lg" id="stages">
+  <div class="section-inner">
+    <div style="margin-bottom: 64px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">The Path</span></div>
+      <h2>From "that's annoying" to "I made that," <span class="italic">in five stages</span></h2>
+      <p class="lede">Stage 0 is for Scouts who have never invented anything. Then four stages: <strong>Find it</strong>, <strong>Build it</strong>, <strong>Prove it</strong>, and <strong>Launch it</strong>. Each one lists the badges that help, the places and tools to use, and three next steps. You can move back a stage whenever you learn something new. Inventors do it all the time.</p>
+      <button class="section-print-btn" onclick="printSection('stages')">⎙ Print this section</button>
+    </div>
+
+    <div class="phase-overview">
+      <div class="track"></div>
+      <div class="phase-overview-grid" id="phaseOverviewGrid"></div>
+    </div>
+
+    <div class="crosscut">
+      <div class="crosscut-label">At every stage</div>
+      <p class="crosscut-lede">Some things aren't a stage you finish. Do these from day one:</p>
+      <div class="crosscut-items">
+        <span class="crosscut-item">Keep your notebook</span>
+        <span class="crosscut-item">Safety first, every tool</span>
+        <span class="crosscut-item">Work as a team</span>
+        <span class="crosscut-item">Ask for help early</span>
+        <span class="crosscut-item">Do your own work (a Scout is Trustworthy)</span>
+      </div>
+    </div>
+
+    <div class="wins" id="wins">
+      <div class="wins-head">
+        <div>
+          <div class="section-label"><div class="line"></div><span class="lbl">Milestones</span></div>
+          <h3 class="wins-title">How Invention Scouts <span class="italic">got here</span></h3>
+        </div>
+        <a class="path-btn" id="winSubmit" href="#">Tell us about a milestone →</a>
+      </div>
+      <ol class="wins-feed" id="winsFeed"></ol>
+    </div>
+
+    <div class="phases-stack" id="phasesStack"></div>
+  </div>
+</section>
+
+<!-- SEASON MATH — cloned into the Stage 0 block by renderStages (data/stages.js: extra) -->
+<template id="seasonMathTpl">
+  <div class="semester" id="seasonMath">
+    <div class="semester-head">
+      <span class="studio-badge">Season math</span>
+      <h4>What can you build before your next event?</h4>
+      <p>Count the weeks to your next summer camp, Jamboree, competition, or the troop meeting where you could show it. Put in the hours you can really give it. Nothing here leaves this device.</p>
+    </div>
+    <div class="semester-grid">
+      <div class="wb-fields">
+        <div class="wb-field wide">
+          <label for="smWeeks">Weeks until your event <span class="hint">camp, Jamboree, competition, meeting</span></label>
+          <input class="wb-input" id="smWeeks" type="number" min="0" max="104" step="1" placeholder="8" oninput="calcSeason()" />
+        </div>
+        <div class="wb-field">
+          <label for="smHours">Hours a week <span class="hint">be honest; school comes first</span></label>
+          <input class="wb-input" id="smHours" type="number" min="0" max="40" step="0.5" placeholder="2" oninput="calcSeason()" />
+        </div>
+        <div class="wb-field">
+          <label for="smBudget">Materials budget <span class="hint">dollars, optional</span></label>
+          <input class="wb-input" id="smBudget" type="number" min="0" step="1" placeholder="20" oninput="calcSeason()" />
+        </div>
+      </div>
+      <div class="wb-out">
+        <div class="wb-verdict idle" id="smVerdict"><b>Put in your weeks and hours</b><span>Most first inventions take less time than a merit badge and cost less than a pizza.</span></div>
+        <div class="wb-stats">
+          <div class="wb-stat"><b id="smTotal">—</b><span>Hours in total</span></div>
+          <div class="wb-stat"><b id="smSessions">—</b><span>90-minute sessions</span></div>
+          <div class="wb-stat"><b id="smPerWeek">—</b><span>Budget per week</span></div>
+        </div>
+        <p class="semester-fits" id="smFits"></p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<!-- MY INVENTOR PATH -->
+<section class="section lg alt" id="path">
+  <div class="section-inner">
+    <div style="margin-bottom: 40px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">Your Progress</span></div>
+      <h2>My inventor <span class="italic">path</span></h2>
+      <p class="lede">Pick your stage and work the list. It saves on this device, so you can come back after the next meeting and pick up where you stopped.</p>
+      <button class="section-print-btn" onclick="printSection('path')">⎙ Print this section</button>
+    </div>
+    <div class="cei-chiprow" id="pathPicker" role="group" aria-label="Pick your stage">
+      <button class="cei-chip" data-stage="1" onclick="pathPick(1)">1 · Find it</button>
+      <button class="cei-chip" data-stage="2" onclick="pathPick(2)">2 · Build it</button>
+      <button class="cei-chip" data-stage="3" onclick="pathPick(3)">3 · Prove it</button>
+      <button class="cei-chip" data-stage="4" onclick="pathPick(4)">4 · Launch it</button>
+    </div>
+    <div class="path-wrap">
+      <div class="path-status">
+        <div class="path-phase-num" id="pathNum">—</div>
+        <div class="path-phase-name" id="pathName">No stage picked yet</div>
+        <div class="path-phase-sub" id="pathSub">Pick a stage above, or take the ten-second "where are you?" quiz.</div>
+        <div class="cei-bar"><i id="pathBar" style="width:0%"></i></div>
+        <div class="path-metrics">
+          <div class="path-metric"><b id="pathDone">0</b><span>Steps done</span></div>
+          <div class="path-metric"><b id="pathLeft">—</b><span>To go</span></div>
+          <div class="path-metric"><b id="pathPct">0%</b><span>Complete</span></div>
+        </div>
+        <div class="path-actions">
+          <button class="path-btn primary" onclick="openAssessment()">⌖ Where am I?</button>
+          <button class="path-btn" id="pathJump" onclick="pathGoToStage()" hidden>Go to my stage</button>
+          <button class="path-btn quiet" id="pathResetBtn" onclick="pathReset()" hidden>Reset</button>
+        </div>
+        <p class="cei-note" id="pathSaved"></p>
+      </div>
+      <div>
+        <ul class="path-checklist" id="pathList"></ul>
+        <p class="cei-note">Saved in this browser only. Nothing is sent anywhere, and clearing your browser data clears it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE INVENTOR'S NOTEBOOK (the Supervised Invention Experience record) -->
+<section class="section lg" id="notebook">
+  <div class="section-inner">
+    <div style="margin-bottom: 40px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">Your Project</span></div>
+      <h2>The inventor's <span class="italic">notebook</span></h2>
+      <p class="lede">One invention, kept going across seasons. Write a short, dated entry every time you work on it: what you did, what you learned, what you changed, and why. Your counselor, your Invention Ranger, your mentor, and competition judges all look at this. The Scouts who keep a notebook alive from one summer to the next are the inventors.</p>
+      <button class="section-print-btn" onclick="printSection('notebook')">⎙ Print my notebook</button>
+    </div>
+
+    <div class="nb-privacy"><b>Saved on this device only.</b> Nothing you type here is sent anywhere. Use your first name only, and leave out your address, school, and phone number. On a shared or school computer, download a backup and clear it when you're done.</div>
+
+    <div class="nb-grid">
+      <div class="nb-col">
+        <h3 class="nb-h">The project</h3>
+        <div class="wb-fields">
+          <div class="wb-field wide"><label for="nbName">What you're calling it</label><input class="wb-input" id="nbName" maxlength="80" placeholder="Frozen-ground tent-stake puller" oninput="nbSaveProject()" /></div>
+          <div class="wb-field wide"><label for="nbProblem">The problem, in one sentence <span class="hint">who has trouble doing what, and why</span></label><textarea class="wb-input" id="nbProblem" rows="2" maxlength="280" placeholder="Younger Scouts can't pull stakes out of frozen ground without bending them." oninput="nbSaveProject()"></textarea></div>
+          <div class="wb-field wide"><label for="nbWho">Who has it <span class="hint">the users you'll test with</span></label><input class="wb-input" id="nbWho" maxlength="120" placeholder="Scouts in my troop who camp in winter" oninput="nbSaveProject()" /></div>
+          <div class="wb-field"><label for="nbStarted">Started</label><input class="wb-input" id="nbStarted" type="date" oninput="nbSaveProject()" /></div>
+          <div class="wb-field"><label for="nbMentor">Mentor or counselor <span class="hint">first name</span></label><input class="wb-input" id="nbMentor" maxlength="40" placeholder="Ms. R." oninput="nbSaveProject()" /></div>
+        </div>
+        <div class="nb-badges-wrap">
+          <div class="stage-badges-label">Badges this project helped you earn</div>
+          <div class="nb-badges" id="nbBadges"></div>
+        </div>
+        <div class="nb-stats">
+          <div class="wb-stat"><b id="nbEntries">0</b><span>Entries</span></div>
+          <div class="wb-stat"><b id="nbHours">0</b><span>Hours</span></div>
+          <div class="wb-stat"><b id="nbVersions">—</b><span>Latest version</span></div>
+          <div class="wb-stat"><b id="nbTalks">0</b><span>User talks</span></div>
+        </div>
+        <p class="cei-note" id="nbSaved"></p>
+      </div>
+
+      <div class="nb-col">
+        <h3 class="nb-h">New entry</h3>
+        <div class="wb-fields">
+          <div class="wb-field"><label for="neDate">Date</label><input class="wb-input" id="neDate" type="date" /></div>
+          <div class="wb-field"><label for="neKind">What kind</label>
+            <select class="wb-input" id="neKind">
+              <option value="idea">Idea</option><option value="research">Research</option><option value="talk">Talked to a user</option>
+              <option value="sketch">Sketch</option><option value="build" selected>Built</option><option value="test">Tested</option>
+              <option value="change">Changed the design</option><option value="pitch">Pitched</option><option value="other">Other</option>
+            </select></div>
+          <div class="wb-field"><label for="neHours">Hours</label><input class="wb-input" id="neHours" type="number" min="0" max="24" step="0.25" placeholder="1.5" /></div>
+          <div class="wb-field"><label for="neVersion">Version <span class="hint">if you built one</span></label><input class="wb-input" id="neVersion" type="number" min="1" max="99" step="1" placeholder="2" /></div>
+          <div class="wb-field wide"><label for="neDid">What I did</label><textarea class="wb-input" id="neDid" rows="2" maxlength="600" placeholder="Printed a T-handle and tested it with five Scouts."></textarea></div>
+          <div class="wb-field wide"><label for="neLearned">What I learned, what I changed, and why</label><textarea class="wb-input" id="neLearned" rows="2" maxlength="600" placeholder="Four liked it. The handle cracked once, so v3 gets thicker walls."></textarea></div>
+        </div>
+        <div class="path-actions"><button class="path-btn primary" type="button" onclick="nbAdd()">+ Add entry</button><span class="nb-msg" id="neMsg" role="status"></span></div>
+      </div>
+    </div>
+
+    <h3 class="nb-h" style="margin-top:48px">Entries</h3>
+    <ol class="nb-list" id="nbList"></ol>
+
+    <div class="nb-actions">
+      <a class="path-btn primary" href="#" onclick="nbBuilt(this)">I built something — tell the program</a>
+      <a class="path-btn" href="#" onclick="nbEmailMentor(this)">Email a mentor (parent copied)</a>
+      <button class="path-btn" type="button" onclick="nbDownload()">Download as text</button>
+      <button class="path-btn" type="button" onclick="nbBackup()">Download a backup</button>
+      <label class="path-btn" for="nbRestoreFile">Restore a backup</label><input type="file" id="nbRestoreFile" accept="application/json,.json" onchange="nbRestore(this)" hidden />
+      <button class="path-btn quiet" type="button" onclick="nbClear()">Clear notebook</button>
+    </div>
+    <p class="cei-note">The two email buttons open your email app with your project summary filled in. Nothing is sent until you, or the parent you copy, press send. In the Invention Scouts plan this record is called a Supervised Invention Experience: the project that mentors review, judges score, and the ladder counts.</p>
+  </div>
+</section>
+
+<!-- THE YOUNG INVENTOR LADDER — rendered from LADDER (data/ladder.js) -->
+<section class="section lg alt" id="ladder">
+  <div class="section-inner">
+    <div style="margin-bottom: 40px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">Recognition</span></div>
+      <h2>The young inventor <span class="italic">ladder</span></h2>
+      <p class="lede">Four rungs: Tinkerer, Builder, Inventor, Founder. Each one is anchored on a merit badge you would earn anyway, plus keeping your notebook project alive and entering a competition. Check things off as you go. When a rung is done, print the sheet and ask your leader to sign it.</p>
+      <p class="ladder-status"><span class="arena-flag">Pilot</span> <span id="ladderStatus"></span></p>
+      <button class="section-print-btn" onclick="printSection('ladder')">⎙ Print the sign-off sheet</button>
+    </div>
+    <p class="ladder-now" id="ladderNow"></p>
+    <div class="ladder-grid" id="ladderGrid"></div>
+    <p class="cei-note">Saved on this device only. Your progress here is a record for you and your leader, not an official advancement record; badges are still recorded by your unit in the usual way.</p>
+  </div>
+</section>
+
+<!-- BADGE MAP AND ARENAS — rendered from BADGES and ARENAS (data/badges.js) -->
+<section class="section lg" id="badges">
+  <div class="section-inner">
+    <div style="margin-bottom: 40px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">The Badge Map</span></div>
+      <h2>The badges that <span class="italic">build inventors</span></h2>
+      <p class="lede">Two badges are the backbone. <strong>Inventing</strong> takes you from a problem to a tested prototype. <strong>Entrepreneurship</strong> turns it into a business case. Around them: the business badges that help you launch, and the making badges already taught in the Innovation Space arenas. Requirements change often, so every card links to the official page.</p>
+      <button class="section-print-btn" onclick="printSection('badges')">⎙ Print this section</button>
+    </div>
+    <div class="cei-chiprow" id="badgeChips" role="group" aria-label="Filter badges">
+      <button class="cei-chip on" data-bt="all" onclick="filterBadges(this)">All</button>
+      <button class="cei-chip" data-bt="core" onclick="filterBadges(this)">Core set</button>
+      <button class="cei-chip" data-bt="supporting" onclick="filterBadges(this)">Making badges</button>
+      <button class="cei-chip" data-bt="emerging" onclick="filterBadges(this)">New &amp; Stage 4</button>
+      <button class="cei-chip" data-bt="s1" onclick="filterBadges(this)">Find it</button>
+      <button class="cei-chip" data-bt="s2" onclick="filterBadges(this)">Build it</button>
+      <button class="cei-chip" data-bt="s3" onclick="filterBadges(this)">Prove it</button>
+      <button class="cei-chip" data-bt="s4" onclick="filterBadges(this)">Launch it</button>
+    </div>
+    <div class="badge-grid" id="badgeGrid"></div>
+    <p class="cei-note">Badge list last reviewed <time data-reviewed="badges"></time>. The official list, with every current requirement: <a id="badgeAllLink" href="https://www.scouting.org/skills/merit-badges/all/" target="_blank" rel="noopener">Scouting America merit badges, A to Z</a>. Your counselor and the current requirements are the final word.</p>
+
+    <div class="arenas">
+      <h3 class="beyond-sub">Where to earn them: the Innovation Space arenas</h3>
+      <p class="beyond-sub-lede">The Sinquefield Innovation Space in Columbia is laid out in arenas, each with a wall poster of the badges and Nova awards it supports. The fifth, an Invention &amp; Enterprise Arena for the business badges, has been proposed and is not built yet.</p>
+      <div class="arena-grid" id="arenaGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PLAYBOOK -->
+<section class="section lg alt" id="howto">
+  <div class="section-inner">
+    <div style="margin-bottom: 48px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">The Playbook</span></div>
+      <h2>How to <span class="italic">do the hard parts</span></h2>
+      <p class="lede">Thirteen questions every young inventor runs into, in the order you will probably hit them. Each answer is a starting point drawn from people who do this for a living: the U.S. Patent and Trademark Office, product designers, engineers, and founders. Follow the links to go deeper.</p>
+      <button class="section-print-btn" onclick="printSection('howto')">⎙ Print this section</button>
+    </div>
+
+    <div class="howto-list">
+      <div class="howto-group" role="presentation">Start here</div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">01</span><span class="howto-title">How do I find a problem worth solving?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: Paul Graham, How to Get Startup Ideas, and the Invention Scouts approach</p>
+          <p>You don't need an idea to start. You need a problem, and the best ones are noticed, not dreamed up. Inventors who last start with something that bugs real people, often themselves.</p>
+          <ol class="howto-steps">
+            <li><strong>Keep a problem list for two weeks.</strong> Every time something annoys you, wastes your time, or makes you say "why is this so hard?", write it down. At camp, at practice, in the kitchen, in the troop trailer. Aim for twenty.</li>
+            <li><strong>Notice your own problems first.</strong> You can test every version on the person who cares most: you. Louis Braille, Chester Greenwood, and Ann Makosinski all started this way.</li>
+            <li><strong>Look for problems lots of people have, often.</strong> A problem that bugs one person once a year is small. One that bugs your whole patrol every campout is worth a notebook.</li>
+            <li><strong>Problems that hurt people beat problems that annoy them.</strong> Margaret Knight was twelve when she saw a mill worker injured and designed a safety stop. Safety, health, and accessibility problems matter.</li>
+            <li><strong>Write it in one sentence.</strong> "[Who] has trouble [doing what] because [why]." If you can't write that sentence, keep looking. If you can, you're in Stage 1.</li>
+          </ol>
+          <p class="howto-note">Run the Problem Hunt challenge with your patrol. Twenty Scouts' problems in forty-five minutes beats a month of thinking alone.</p>
+          <a href="https://paulgraham.com/startupideas.html" target="_blank" rel="noopener" class="howto-link">Read How to Get Startup Ideas →</a>
+        </div>
+      </div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">02</span><span class="howto-title">Has someone already invented it?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: USPTO patent search guidance and Google Patents</p>
+          <p>Probably, at least partly. That's good news: it proves the problem is real, and you get to learn from how other people tried to solve it. What you're looking for is what is still missing.</p>
+          <ol class="howto-steps">
+            <li><strong>Search stores first.</strong> Type the problem, not your solution, into two or three online stores: "pull tent stakes frozen ground." If there's a product, read the one-star reviews. That's a list of what it gets wrong.</li>
+            <li><strong>Then search patents.</strong> <a href="https://patents.google.com/" target="_blank" rel="noopener">Google Patents</a> searches millions of patents in plain words. Try five different phrasings. Old, expired patents count too.</li>
+            <li><strong>Read the drawings, not the legal text.</strong> Patent drawings show you exactly how someone else solved it. That's free engineering advice.</li>
+            <li><strong>List what's different about yours.</strong> Cheaper? Lighter? Easier for a younger Scout? Works in the cold? Write it in your notebook. That list becomes your pitch.</li>
+            <li><strong>Found an exact match?</strong> Don't quit. Change the user, the setting, or the price. Or pick the next problem on your list. Every search makes you better at the next one.</li>
+          </ol>
+          <p class="howto-note">Anything already public before your invention is called prior art. You'll come back to this search in Stage 4 if you think about a patent.</p>
+          <a href="https://patents.google.com/" target="_blank" rel="noopener" class="howto-link">Search Google Patents →</a>
+        </div>
+      </div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">03</span><span class="howto-title">How do I keep an inventor's notebook?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: the lab-notebook practice of engineers and inventors, and the Inventing merit badge</p>
+          <p>A notebook is a record of what you did and why you did it, written as you go. It is how you remember what you tried, how a mentor helps you, and how judges see your thinking. Engineers keep them for the same reasons.</p>
+          <ol class="howto-steps">
+            <li><strong>Date every entry.</strong> Even one line counts. "Nov 9. Built v1. Hurts your hand."</li>
+            <li><strong>Write what you did and what you learned.</strong> The second part is what makes it an inventor's notebook, not a diary. What surprised you? What will you change?</li>
+            <li><strong>Number your versions.</strong> v1, v2, v3. Judges love to see how far version 3 is from version 1.</li>
+            <li><strong>Record people, not just parts.</strong> Who did you talk to, what did they do with it, what did they say? Use first names or "Scout, age 12."</li>
+            <li><strong>Never erase. Cross out.</strong> A wrong turn is part of the story. If you use paper, keep sketches, photos, and test results in it too.</li>
+          </ol>
+          <p class="howto-note">The notebook in this guidebook saves on your device and prints. Some Scouts keep a paper one too and photograph the sketches. Either way, keep it going after the badge is signed.</p>
+          <a href="#notebook" onclick="scrollToSection('notebook'); return false;" class="howto-link">Open your notebook →</a>
+        </div>
+      </div>
+
+      <div class="howto-group" role="presentation">Build it</div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">04</span><span class="howto-title">How do I get from a sketch to a prototype?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: product-design practice (IDEO, Stanford d.school): build to think</p>
+          <p>Designers say "build to think." You learn more from a bad model you can hold than from a perfect drawing. The trick is to start cheap and only spend time and money once you know what you're making.</p>
+          <ol class="howto-steps">
+            <li><strong>Sketch three different ideas.</strong> Not three versions of one idea: three different ways to solve the problem. Then pick.</li>
+            <li><strong>Build ugly, in an hour.</strong> Cardboard, tape, clay, paper clips, foam. If it takes longer than an hour, you're building too much too soon.</li>
+            <li><strong>Separate "looks like" from "works like."</strong> One model to check the size and shape, another (maybe a mess of wires on a table) to prove the mechanism. Combine them later.</li>
+            <li><strong>Then use the real tools.</strong> Design it in Tinkercad or Onshape and print it, cut it on a laser, or build it in the wood or metal shop. Show your counselor your plans first.</li>
+            <li><strong>Test one thing at a time.</strong> Change the handle or the material, not both. Otherwise you won't know which change worked.</li>
+          </ol>
+          <p class="howto-note">Most people use a 3D printer to print a model someone else designed and posted online. Print your own design instead. That's the difference between using a printer and inventing.</p>
+          <a href="https://www.tinkercad.com/" target="_blank" rel="noopener" class="howto-link">Start in Tinkercad →</a>
+        </div>
+      </div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">05</span><span class="howto-title">How do I use the shop tools safely?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: Scouting America's Guide to Safe Scouting and makerspace practice</p>
+          <p>Laser engravers, saws, soldering irons, welders, and even 3D printers can hurt you. Every good maker follows the same rules, every time, including the adults.</p>
+          <ol class="howto-steps">
+            <li><strong>Get the briefing first.</strong> Never use a tool until a trained adult has shown you how and watched you use it. Ask every time a tool is new to you.</li>
+            <li><strong>Dress for the shop.</strong> Safety glasses on. Long hair tied back. No loose sleeves, hoodies strings, or dangling jewelry near anything that spins.</li>
+            <li><strong>Never alone.</strong> Use the buddy system and work where a trained adult can see you. Welding and metalwork are for older Scouts with trained supervision.</li>
+            <li><strong>Know the tool's specific danger.</strong> Lasers can start fires: never leave one running. Soldering irons stay hot after they're off. Some plastics give off fumes when cut or melted: ask before you cut anything new.</li>
+            <li><strong>Get your counselor's OK before the real build.</strong> For Inventing, share your design and building plans with your counselor and get approval before you build the prototype.</li>
+          </ol>
+          <p class="howto-note">If something feels unsafe, stop and ask. Nobody who knows what they're doing will think less of you. They stop and ask too.</p>
+          <a href="https://www.scouting.org/health-and-safety/gss/" target="_blank" rel="noopener" class="howto-link">Read the Guide to Safe Scouting →</a>
+        </div>
+      </div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">06</span><span class="howto-title">What do I do when it breaks?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: James Dyson on prototyping, and the Invention Scouts finding principle</p>
+          <p>Celebrate a little. A prototype that breaks just told you something no amount of thinking could. James Dyson has said he built 5,127 prototypes of his bagless vacuum over about five years before one worked well enough.</p>
+          <ol class="howto-steps">
+            <li><strong>Write down exactly how it failed.</strong> Where did it crack? When? Under what load? That's a notebook entry, and it's the most useful kind.</li>
+            <li><strong>Find the cause, not the symptom.</strong> The handle cracked. Why? Too thin? Wrong material? Printed in the weak direction? Ask "why" three times.</li>
+            <li><strong>Change one thing, then test again.</strong> That's an iteration. Number it.</li>
+            <li><strong>Ask someone who's seen it before.</strong> Your Invention Ranger, a counselor, or a mentor has probably broken the same thing. Bring the broken part.</li>
+            <li><strong>Know when to switch.</strong> If five versions all fail the same way, the idea might need to change, not the part. Go back to your sketches. That's still progress.</li>
+          </ol>
+          <p class="howto-note">The program's founder put it simply: the Scout who keeps a project alive across two summers is the inventor. Breaking things is how you get there.</p>
+        </div>
+      </div>
+
+      <div class="howto-group" role="presentation">Prove it</div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">07</span><span class="howto-title">How do I find out if people actually want it?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: Rob Fitzpatrick, The Mom Test</p>
+          <p>People are nice. If you ask "would you use this?", most will say yes to be kind. The Mom Test is a way to ask questions that even your mom can't lie to you about.</p>
+          <ol class="howto-steps">
+            <li><strong>Ask about the past, not the future.</strong> "When did that last happen to you? What did you do?" beats "Would you buy this?" every time.</li>
+            <li><strong>Don't describe your idea first.</strong> The moment you pitch, people start being polite. Learn about their problem, then show it.</li>
+            <li><strong>Watch, don't explain.</strong> Hand someone your prototype and say nothing. Where they get stuck is your next version.</li>
+            <li><strong>Count what they do, not what they say.</strong> Did they ask to borrow it again? Ask where to get one? That's real. "Cool!" isn't.</li>
+            <li><strong>Talk to people with a buddy, near adults you know.</strong> Interview Scouts at meetings and campouts, family, and neighbors with a parent. Don't message strangers online.</li>
+          </ol>
+          <p class="howto-note">Five honest conversations will teach you more than fifty compliments. Run the Five Interviews challenge to practice.</p>
+          <a href="https://www.momtestbook.com/" target="_blank" rel="noopener" class="howto-link">Read about The Mom Test →</a>
+        </div>
+      </div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">08</span><span class="howto-title">How do I write a one-page business case?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: the Entrepreneurship merit badge business plan, shortened, and Trulaske CEI mentors</p>
+          <p>A business case answers one question: could this work outside your garage? You don't need a business to write one. One page, seven headings. The Entrepreneurship merit badge asks for the longer version.</p>
+          <ol class="howto-steps">
+            <li><strong>The problem.</strong> Your one sentence, plus the proof: "5 of 6 Scouts I asked bent a stake this year."</li>
+            <li><strong>Who it's for.</strong> The user, and the customer if it's someone else (the troop committee, a parent).</li>
+            <li><strong>What it is.</strong> Your invention in two sentences, and what's different from what exists.</li>
+            <li><strong>What it costs to make one.</strong> Parts, packaging, and your time. The Workbench's Price it tab does the math.</li>
+            <li><strong>What you'd charge, and why.</strong> What do similar things cost? What did people say they paid last time?</li>
+            <li><strong>How people would find out.</strong> A booth at camp, the troop newsletter, the council trading post, a family member's shop.</li>
+            <li><strong>What's next, and what you need.</strong> Version 3? Ten units for a test? A mentor? A competition?</li>
+          </ol>
+          <p class="howto-note">This is the half of inventing most camps don't teach, and the half Trulaske mentors are best at. Bring your draft to a mentor session.</p>
+          <a href="https://www.scouting.org/merit-badges/entrepreneurship/" target="_blank" rel="noopener" class="howto-link">Entrepreneurship merit badge →</a>
+        </div>
+      </div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">09</span><span class="howto-title">How do I pitch my invention to judges?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: pitch practice from startup competitions, adapted for Scout invention competitions</p>
+          <p>A pitch is a short story with five beats. Ninety seconds is enough if every sentence earns its place. Judges remember the problem and the proof, not the adjectives.</p>
+          <ol class="howto-steps">
+            <li><strong>The problem (15 seconds).</strong> Make them feel it. "Raise your hand if you've ever bent a tent stake." Start with a person, not a product.</li>
+            <li><strong>Who has it (10 seconds).</strong> How many, how often. Use the number from your interviews.</li>
+            <li><strong>Your fix (25 seconds).</strong> Show it. Hold it up. Demonstrate it if you can. One sentence on what's different.</li>
+            <li><strong>Proof (25 seconds).</strong> What happened when real people used it. Version 1 versus version 3. Your notebook is your evidence.</li>
+            <li><strong>What's next (15 seconds).</strong> What it costs, what you'd charge, and the one thing you need: a mentor, a batch of 50, a test at camp.</li>
+          </ol>
+          <p class="howto-note">Practice out loud, five times, with a timer. Then once in front of your patrol. Your voice will shake less the fifth time than the first. That's the whole secret.</p>
+        </div>
+      </div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">10</span><span class="howto-title">Do I have to invent alone?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: Dr. Jeanne Cairns Sinquefield, Technology and Innovation (2026)</p>
+          <p>No, and you shouldn't. The founder of Invention Scouts points out that inventors are rare, but every inventor needs a team of engineers, artists, business people, marketers, and salespeople. Not every Scout will be the inventor. Every Scout can be on the team.</p>
+          <ol class="howto-steps">
+            <li><strong>Use the patrol method.</strong> Pick a problem together, then split the roles: a builder, a tester, a designer for the look and the poster, and a pitcher.</li>
+            <li><strong>Find your role.</strong> Maybe you're the one who sees how to make it, or the one who can explain it to anyone, or the one who keeps the notebook. All of these are inventor jobs.</li>
+            <li><strong>Agree who does what, in writing.</strong> One line each in the notebook. It prevents the "I did all the work" argument later.</li>
+            <li><strong>Credit everyone.</strong> If it gets entered, sold, or written up, every teammate's name goes on it.</li>
+            <li><strong>Decide together what happens if it takes off.</strong> If the team might sell it or file a patent, talk to your parents and a mentor early. Fairness is easier before there's money.</li>
+          </ol>
+          <p class="howto-note">The summer-camp Startup program is built around small teams for exactly this reason. Its goal isn't only inventors; it's Scouts who know how to work as a team and lead.</p>
+        </div>
+      </div>
+
+      <div class="howto-group" role="presentation">Launch it · with a parent and a mentor</div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">11</span><span class="howto-title">Should I patent my invention?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: U.S. Patent and Trademark Office, Patent Basics and scam-prevention guidance</p>
+          <p>Maybe, but probably not yet. A patent is expensive, takes years, and only matters if someone would want to copy your invention and sell it. Most young inventors should first prove people want it. You can be named as an inventor at any age, but because there are forms, fees, and contracts, a parent or guardian is part of every step.</p>
+          <ol class="howto-steps">
+            <li><strong>Know what a patent does.</strong> It lets you stop others from making, using, or selling your invention for a limited time (a utility patent usually lasts 20 years from filing), in exchange for publishing how it works.</li>
+            <li><strong>Be careful about showing it publicly.</strong> Posting a video, selling it, or presenting it in public is a public disclosure. In the U.S. you have one year after your own disclosure to file; many other countries give you no time at all. Talk to a parent and a mentor before you post it.</li>
+            <li><strong>Know the cheaper first step.</strong> A provisional application holds your filing date for 12 months while you test whether the invention is worth more. It never becomes a patent on its own. The USPTO publishes its fees and has discounts for small inventors.</li>
+            <li><strong>Watch for scams.</strong> Companies that advertise "We'll patent and sell your idea!" often charge thousands up front and deliver little. The USPTO warns about them and publishes complaints. Never pay one; tell an adult.</li>
+            <li><strong>Get real help.</strong> Mentors include alumni attorneys and founders who can tell you whether a patent makes sense. The Invention Scouts patent stage points toward the National Academy of Inventors' certificate training.</li>
+          </ol>
+          <p class="howto-note">The customer conversations from Stage 3 answer the most important patent question: would anyone pay for this? Answer that before you spend a dollar.</p>
+          <a href="https://www.uspto.gov/patents/basics" target="_blank" rel="noopener" class="howto-link">USPTO Patent Basics →</a>
+          <a href="https://www.uspto.gov/PatentScamPrevention" target="_blank" rel="noopener" class="howto-link">USPTO scam warnings →</a>
+        </div>
+      </div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">12</span><span class="howto-title">How do I make fifty of something?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: design-for-manufacture practice, and the proposed Invention Scouts launch track</p>
+          <p>Making one is inventing. Making fifty is manufacturing, and it's a different puzzle: every minute and every cent gets multiplied by fifty.</p>
+          <ol class="howto-steps">
+            <li><strong>Write the bill of materials.</strong> Every part, how many, what each costs, and where you buy it. Buying fifty is often cheaper per part than buying one.</li>
+            <li><strong>Simplify the design.</strong> Fewer parts, fewer screws, snap-fits instead of glue. Print in the direction that's strongest and fastest. This is called design for manufacture.</li>
+            <li><strong>Time yourself making five.</strong> The fifth will be faster than the first. Multiply your fifth time by fifty. Is that a weekend or a whole summer?</li>
+            <li><strong>Make a jig.</strong> A simple guide that holds parts in the same place every time makes every unit the same and saves hours.</li>
+            <li><strong>Make ten before fifty.</strong> Sell or give away ten and see what happens. Then decide on fifty. The Workbench's Batch tab shows where you break even.</li>
+          </ol>
+          <p class="howto-note">A proposed twelve-month launch track would give Scouts with a working prototype an engineering review, a small-batch run, and a place to sell. It's named for Chess2Go, the portable chess set dreamed up at a Missouri campsite.</p>
+          <a href="#tools" onclick="scrollToSection('tools'); return false;" class="howto-link">Open the Workbench →</a>
+        </div>
+      </div>
+
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">13</span><span class="howto-title">How do I sell it, or license it?</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: the Salesmanship and American Business merit badges, and Trulaske CEI mentors</p>
+          <p>There are two ways to get an invention into the world: sell it yourself, or license it to a company that makes and sells it and pays you a small share. Both involve money and agreements, so both happen with a parent or guardian.</p>
+          <ol class="howto-steps">
+            <li><strong>Make your first ten sales by hand.</strong> A table at a craft fair, a booth at an event, friends of your family. Selling face to face teaches you what people really think, fast.</li>
+            <li><strong>Keep your invention business separate from Scouting fundraising.</strong> Scouting has rules about using its name, logos, and uniform to sell things. Ask your Scoutmaster before you use any of them.</li>
+            <li><strong>Let a parent handle the money side.</strong> Payments, accounts, and anything with a card number. Keep a simple record in your notebook of what you sold and spent.</li>
+            <li><strong>Know what licensing means.</strong> A company makes and sells your invention and pays you a royalty, often a few percent of each sale. Companies usually want proof people buy it, and often a patent or a filing.</li>
+            <li><strong>Never sign anything alone.</strong> Any agreement, any "partner" offering to help, any request for money: show your parent and a mentor first.</li>
+          </ol>
+          <p class="howto-note">Many inventions never get licensed, and many great inventors never sell anything. The skills you build by trying (talking to people, pricing, pitching) last a lifetime either way.</p>
+          <a href="https://www.scouting.org/merit-badges/salesmanship/" target="_blank" rel="noopener" class="howto-link">Salesmanship merit badge →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Practice rubric and award slate -->
+    <div class="rubric" id="rubric">
+      <div class="section-label" style="margin-top:56px"><div class="line"></div><span class="lbl">How Judges Score</span></div>
+      <h3 class="prompt-lib-title">The practice rubric</h3>
+      <p class="prompt-lib-lede">A draft of the shared rubric Trulaske and the council are writing, so Scouts see the same expectations from a troop meeting to the council final. Use it to practice. The final version, and how much the business case counts at each age, is set with the council.</p>
+      <div class="rubric-table" role="table" aria-label="Practice rubric">
+        <div class="rubric-row head" role="row"><span role="columnheader">What judges look at</span><span role="columnheader">Points</span><span role="columnheader">A strong entry shows</span></div>
+        <div class="rubric-row" role="row"><span role="cell"><b>The problem</b></span><span role="cell">20</span><span role="cell">A clear one-sentence problem, a real group of people who have it, and why it matters</span></div>
+        <div class="rubric-row" role="row"><span role="cell"><b>Evidence from users</b></span><span role="cell">20</span><span role="cell">Conversations and tests with real users, recorded in the notebook, and what they changed</span></div>
+        <div class="rubric-row" role="row"><span role="cell"><b>Prototype and iteration</b></span><span role="cell">25</span><span role="cell">A working prototype and clear improvement from version to version, built safely</span></div>
+        <div class="rubric-row" role="row"><span role="cell"><b>Business case</b></span><span role="cell">20</span><span role="cell">Cost to make, a reasoned price, who would buy it, and what comes next</span></div>
+        <div class="rubric-row" role="row"><span role="cell"><b>Pitch and teamwork</b></span><span role="cell">15</span><span role="cell">A clear pitch on time, honest answers to questions, and credit to every teammate</span></div>
+      </div>
+      <h4 class="prompt-grid-heading" style="margin-top:40px">An award slate, not one prize</h4>
+      <p class="prompt-grid-sub">Proposed, borrowing from how FFA gives many narrow awards so most serious entrants can win something:</p>
+      <div class="crosscut-items award-slate">
+        <span class="crosscut-item">Best Customer Discovery</span>
+        <span class="crosscut-item">Best Iteration</span>
+        <span class="crosscut-item">Best Team Role</span>
+        <span class="crosscut-item">Best Business Case</span>
+        <span class="crosscut-item">Ranger of the Year (for adults)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIT CHALLENGES — rendered from CHALLENGES (data/challenges.js) -->
+<section class="section lg" id="challenges">
+  <div class="section-inner">
+    <div style="margin-bottom: 40px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">Run One This Week</span></div>
+      <h2>Patrol <span class="italic">challenges</span></h2>
+      <p class="lede">Short invention challenges a patrol leader or Invention Ranger can run at a troop meeting. Most take about 45 minutes and cheap materials. Every one ends the same way: whoever wants to keep going opens a notebook and tells an adult they know.</p>
+      <button class="section-print-btn" onclick="printSection('challenges')">⎙ Print all challenges</button>
+    </div>
+    <div class="challenge-grid" id="challengeGrid"></div>
+  </div>
+</section>
+
+<!-- THE CALENDAR — rendered from OPPORTUNITIES (data/opportunities.js) -->
+<section class="section lg alt" id="calendar">
+  <div class="section-inner">
+    <div style="margin-bottom: 40px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">On The Calendar</span></div>
+      <h2>Where to <span class="italic">show it</span></h2>
+      <p class="lede">The Jamboree, summer camp, Merit Badge University, and the competition ladder. When the council confirms a date, a countdown and an "add to calendar" button appear.</p>
+      <button class="section-print-btn" onclick="printSection('calendar')">⎙ Print this section</button>
+    </div>
+    <div class="cei-chiprow" id="dlChips">
+      <button class="cei-chip on" data-dl="all" onclick="filterDeadlines(this)">All</button>
+      <button class="cei-chip" data-dl="Event" onclick="filterDeadlines(this)">Events</button>
+      <button class="cei-chip" data-dl="Camp" onclick="filterDeadlines(this)">Camp</button>
+      <button class="cei-chip" data-dl="Competition" onclick="filterDeadlines(this)">Competitions</button>
+      <button class="cei-chip" data-dl="Program" onclick="filterDeadlines(this)">Programs</button>
+    </div>
+    <div class="dl-grid" id="dlGrid"></div>
+    <div class="cei-empty" id="dlEmpty" style="display:none"><strong>Nothing matches that filter</strong>Try "All".</div>
+    <div class="subscribe" id="dlSubscribe">
+      <div class="subscribe-text">
+        <h3>Put it on the family calendar</h3>
+        <p>Subscribe once and every confirmed date lands in your family's calendar with a one-week reminder. Or ask for an email when dates are announced.</p>
+      </div>
+      <div class="subscribe-actions">
+        <a class="path-btn primary" id="dlWebcal" href="calendar.ics">Subscribe</a>
+        <a class="path-btn" href="calendar.ics" download>Download (.ics)</a>
+        <a class="path-btn" id="dlEmail" href="#">Email us the dates</a>
+      </div>
+    </div>
+    <p class="cei-note">Calendar last reviewed <time data-reviewed="calendar"></time>. National competitions are in <a href="#beyond" onclick="scrollToSection('beyond'); return false;">Beyond the guidebook</a>. Your unit leader registers you for council events.</p>
+  </div>
+</section>
+
+<!-- THE WORKBENCH -->
+<section class="section lg" id="tools">
+  <div class="section-inner">
+    <div style="margin-bottom: 40px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">Run The Numbers</span></div>
+      <h2>The inventor's <span class="italic">workbench</span></h2>
+      <p class="lede">Three calculations you'll need in Prove it and Launch it. Your numbers stay on this device, so they're still here next time.</p>
+      <button class="section-print-btn" onclick="printSection('tools')">⎙ Print this section</button>
+    </div>
+    <div class="wb-tabs" role="tablist">
+      <button class="wb-tab on" role="tab" aria-selected="true" aria-controls="wbPrice" data-wb="wbPrice" onclick="wbTab(this)">Price it</button>
+      <button class="wb-tab" role="tab" aria-selected="false" aria-controls="wbBatch" data-wb="wbBatch" onclick="wbTab(this)">Make a batch</button>
+      <button class="wb-tab" role="tab" aria-selected="false" aria-controls="wbPrint" data-wb="wbPrint" onclick="wbTab(this)">3D print cost</button>
+    </div>
+
+    <div class="wb-panel on" id="wbPrice" role="tabpanel">
+      <div class="wb-fields">
+        <div class="wb-field"><label for="pMat">Parts for one <span class="hint">dollars</span></label><input class="wb-input" id="pMat" type="number" min="0" step="0.05" placeholder="2.40" oninput="calcPrice()" /></div>
+        <div class="wb-field"><label for="pPack">Packaging for one</label><input class="wb-input" id="pPack" type="number" min="0" step="0.05" placeholder="0.30" oninput="calcPrice()" /></div>
+        <div class="wb-field"><label for="pMin">Minutes to make one</label><input class="wb-input" id="pMin" type="number" min="0" step="1" placeholder="10" oninput="calcPrice()" /></div>
+        <div class="wb-field"><label for="pRate">Your time, per hour <span class="hint">yes, it counts</span></label><input class="wb-input" id="pRate" type="number" min="0" step="0.5" placeholder="12" oninput="calcPrice()" /></div>
+        <div class="wb-field wide"><label for="pPrice">Price you're thinking of</label><input class="wb-input" id="pPrice" type="number" min="0" step="0.5" placeholder="10" oninput="calcPrice()" /></div>
+      </div>
+      <div class="wb-out">
+        <div class="wb-verdict idle" id="pVerdict"><b>Put in your parts cost</b><span>Add up every part for one unit.</span></div>
+        <div class="wb-stats">
+          <div class="wb-stat"><b id="pCost">—</b><span>Cost to make one</span></div>
+          <div class="wb-stat"><b id="pProfit">—</b><span>Profit on each</span></div>
+          <div class="wb-stat"><b id="pMargin">—</b><span>Margin</span></div>
+          <div class="wb-stat"><b id="pMult">—</b><span>Price ÷ cost</span></div>
+        </div>
+        <p class="wb-link">Playbook: <a href="#howto" onclick="scrollToSection('howto'); return false;">How do I write a one-page business case?</a></p>
+      </div>
+    </div>
+
+    <div class="wb-panel" id="wbBatch" role="tabpanel">
+      <div class="wb-fields">
+        <div class="wb-field"><label for="bQty">How many to make</label><input class="wb-input" id="bQty" type="number" min="1" step="1" placeholder="50" oninput="calcBatch()" /></div>
+        <div class="wb-field"><label for="bUnit">Cost to make one <span class="hint">from Price it</span></label><input class="wb-input" id="bUnit" type="number" min="0" step="0.05" placeholder="4.70" oninput="calcBatch()" /></div>
+        <div class="wb-field"><label for="bOnce">One-time costs <span class="hint">tools, a jig, a booth fee</span></label><input class="wb-input" id="bOnce" type="number" min="0" step="1" placeholder="60" oninput="calcBatch()" /></div>
+        <div class="wb-field"><label for="bPrice">Price each</label><input class="wb-input" id="bPrice" type="number" min="0" step="0.5" placeholder="10" oninput="calcBatch()" /></div>
+        <div class="wb-field wide"><label for="bMin">Minutes to make one <span class="hint">optional, for the hours total</span></label><input class="wb-input" id="bMin" type="number" min="0" step="1" placeholder="8" oninput="calcBatch()" /></div>
+      </div>
+      <div class="wb-out">
+        <div class="wb-verdict idle" id="bVerdict"><b>Plan a batch</b><span>How many, what each costs, one-time costs, and your price.</span></div>
+        <div class="wb-stats">
+          <div class="wb-stat"><b id="bTotal">—</b><span>Total cost</span></div>
+          <div class="wb-stat"><b id="bRevenue">—</b><span>If all sell</span></div>
+          <div class="wb-stat"><b id="bProfit">—</b><span>Profit if all sell</span></div>
+          <div class="wb-stat"><b id="bBreak">—</b><span>Break-even</span></div>
+          <div class="wb-stat"><b id="bHours">—</b><span>Hours of work</span></div>
+        </div>
+        <p class="wb-link">Playbook: <a href="#howto" onclick="scrollToSection('howto'); return false;">How do I make fifty of something?</a></p>
+      </div>
+    </div>
+
+    <div class="wb-panel" id="wbPrint" role="tabpanel">
+      <div class="wb-fields">
+        <div class="wb-field"><label for="gGrams">Filament <span class="hint">grams, from the slicer</span></label><input class="wb-input" id="gGrams" type="number" min="0" step="1" placeholder="30" oninput="calcPrint()" /></div>
+        <div class="wb-field"><label for="gSpool">Spool price <span class="hint">dollars per 1 kg</span></label><input class="wb-input" id="gSpool" type="number" min="0" step="1" placeholder="22" oninput="calcPrint()" /></div>
+        <div class="wb-field"><label for="gHours">Print time <span class="hint">hours</span></label><input class="wb-input" id="gHours" type="number" min="0" step="0.25" placeholder="1.5" oninput="calcPrint()" /></div>
+        <div class="wb-field"><label for="gRate">Printer cost per hour <span class="hint">power and wear; ask the lab</span></label><input class="wb-input" id="gRate" type="number" min="0" step="0.05" placeholder="0.30" oninput="calcPrint()" /></div>
+        <div class="wb-field wide"><label for="gFail">Prints that fail <span class="hint">percent, be honest</span></label><input class="wb-input" id="gFail" type="number" min="0" max="90" step="1" placeholder="10" oninput="calcPrint()" /></div>
+      </div>
+      <div class="wb-out">
+        <div class="wb-verdict idle" id="gVerdict"><b>Put in the slicer numbers</b><span>The slicer shows grams and time before you print.</span></div>
+        <div class="wb-stats">
+          <div class="wb-stat"><b id="gFil">—</b><span>Filament</span></div>
+          <div class="wb-stat"><b id="gMach">—</b><span>Machine time</span></div>
+          <div class="wb-stat"><b id="gEach">—</b><span>Per good print</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="cei-note">Planning tools, not financial or legal advice. Anything involving real money, sales, or agreements happens with a parent or guardian.</p>
+  </div>
+</section>
+
+<!-- AI -->
+<section class="section lg alt" id="ai">
+  <div class="section-inner">
+    <div style="margin-bottom: 48px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">A Power Tool</span></div>
+      <h2>Using AI <span class="italic">like an inventor</span></h2>
+      <p class="lede">AI chat tools can explain how a hinge works at midnight, quiz you before a pitch, and help you plan your next two weeks. Like any power tool, they have rules, and they're useless if they do the work for you. A merit badge counselor needs to see your thinking, not a chatbot's. A Scout is trustworthy.</p>
+      <p class="cei-note">Last reviewed <time data-reviewed="ai"></time>. New: the <a href="https://www.scouting.org/merit-badges/artificial-intelligence/" target="_blank" rel="noopener">Artificial Intelligence merit badge</a>.</p>
+      <button class="section-print-btn" onclick="printSection('ai')">⎙ Print this section</button>
+    </div>
+
+    <div class="howto-list">
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">01</span><span class="howto-title">The rules, before you start</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: AI providers' terms of use, Scouting's Youth Protection rules, and patent basics</p>
+          <ol class="howto-steps">
+            <li><strong>Check the age rules.</strong> Most popular AI chat tools require you to be at least 13, and many require a parent's permission until you're 18. Read the tool's terms with a parent, or use the account your school gives you.</li>
+            <li><strong>Keep personal details out.</strong> No last name, address, school, phone number, or photos of yourself. Assume anything you type may be stored.</li>
+            <li><strong>Keep secret inventions secret.</strong> If you might want to patent or sell your invention, talk to a mentor before pasting its details into a public AI tool.</li>
+            <li><strong>Check everything it says.</strong> AI can sound sure and be completely wrong, including about safety, patents, and badge requirements. Check with a real source or a real adult.</li>
+            <li><strong>Do your own work.</strong> Use it to learn and to practice, never to write your badge requirements, your interviews, or your notebook. If it's not your thinking, it's not your invention.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="howto-card">
+        <button class="howto-q" onclick="toggleHowto(this)" aria-expanded="false">
+          <span class="howto-num">02</span><span class="howto-title">Good jobs for AI, and bad ones</span><span class="howto-chev">+</span>
+        </button>
+        <div class="howto-a">
+          <p class="howto-source">Source: Trulaske CEI mentors</p>
+          <p><strong>Good jobs:</strong> explaining how a mechanism or a circuit works; asking you questions that help you notice problems; suggesting search phrases for Google Patents; reviewing your design by asking what could break; quizzing you on your pitch; checking your cost math step by step; making a two-week plan.</p>
+          <p><strong>Bad jobs:</strong> inventing the idea for you; writing answers to badge requirements; making up what users "would say"; deciding whether something is safe to build; telling you whether to file a patent; anything with money or contracts.</p>
+          <p class="howto-note">A good test: if you couldn't explain the answer to your counselor without the AI open, you haven't learned it yet.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prompt-lib">
+      <div class="section-label"><div class="line"></div><span class="lbl">Put It To Work</span></div>
+      <h3 class="prompt-lib-title">Prompts that coach you</h3>
+      <p class="prompt-lib-lede">Ten prompts written to make the AI ask you questions instead of doing your work. Fill in your details below and copy the result into a tool you're allowed to use.</p>
+      <div class="studio">
+        <div class="studio-head"><span class="studio-badge">Prompt Studio</span></div>
+        <h4>Drop in your details</h4>
+        <p class="studio-lede">Leave a box blank and its [placeholder] stays for you to fill in later. Nothing you type here is saved or sent.</p>
+        <div class="studio-fields">
+          <div class="studio-field full"><label for="studioPrompt">Prompt</label><select id="studioPrompt" onchange="updateStudio()"></select></div>
+          <div class="studio-field"><label for="studio-invention">Your invention</label><input type="text" id="studio-invention" placeholder="e.g. a tent-stake puller" oninput="updateStudio()" /></div>
+          <div class="studio-field"><label for="studio-user">Who it's for</label><input type="text" id="studio-user" placeholder="e.g. younger Scouts who camp in winter" oninput="updateStudio()" /></div>
+          <div class="studio-field"><label for="studio-problem">The problem</label><input type="text" id="studio-problem" placeholder="e.g. stakes bend in frozen ground" oninput="updateStudio()" /></div>
+          <div class="studio-field"><label for="studio-stage">Your stage</label><input type="text" id="studio-stage" placeholder="e.g. Build it, version 2" oninput="updateStudio()" /></div>
+        </div>
+        <div class="studio-output-wrap">
+          <div class="studio-output-label">Your prompt</div>
+          <div class="studio-output" id="studioOutput"></div>
+          <button class="studio-copy" id="studioCopy" onclick="copyStudio()">Copy prompt</button>
+          <p class="studio-hint">Highlighted [spots] are still waiting for your details.</p>
+        </div>
+      </div>
+      <h4 class="prompt-grid-heading">All ten prompts</h4>
+      <p class="prompt-grid-sub">Copy any of them and edit the bracketed parts yourself.</p>
+      <div class="prompt-grid" id="promptGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCE INDEX — cards and filter options are rendered from RESOURCES (data/resources.js) -->
+<section class="section lg" id="resources">
+  <div class="section-inner">
+    <div style="margin-bottom: 48px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">The Index</span></div>
+      <h2>Every resource, <span class="italic">searchable</span></h2>
+      <p class="lede">Places to build, programs to join, free online tools, and things to read. Each card says who it's for, what it costs, and how long it takes. <strong>Council</strong> marks programs run by the Great Rivers Council. Online tools have their own age rules, noted on the card.</p>
+      <button class="section-print-btn" onclick="printSection('resources')">⎙ Print this section</button>
+    </div>
+    <div class="filter-row">
+      <div class="search-wrap"><input type="text" id="searchInput" aria-label="Search resources" placeholder="Search resources…" oninput="filterResources()" /></div>
+      <select class="filter-select" id="phaseFilter" aria-label="Filter resources by stage" onchange="filterResources()"></select>
+      <select class="filter-select" id="tagFilter" aria-label="Filter resources by type" onchange="filterResources()"></select>
+      <button class="clear-btn" id="clearBtn" onclick="clearFilters()" style="display:none">Clear</button>
+    </div>
+    <div class="results-count" id="resultsCount"></div>
+    <div class="resource-grid" id="resourceGrid"></div>
+    <div class="no-results" id="noResults" style="display:none"><h3>No matches</h3><p>Try a different search or filter.</p></div>
+    <p class="cei-note">Resource list last reviewed <time data-reviewed="resources"></time>. Something missing or out of date? <a href="#feedback" onclick="scrollToSection('feedback'); return false;">Tell us</a>.</p>
+  </div>
+</section>
+
+<!-- KNOWLEDGE — cards are rendered from KNOWLEDGE (data/knowledge.js) -->
+<section class="section lg dark" id="knowledge">
+  <div class="lines-bg"></div>
+  <div class="section-inner" style="position: relative;">
+    <div style="margin-bottom: 64px; max-width: 48rem;">
+      <div class="section-label" style="color: var(--gold)"><div class="line"></div><span class="lbl">Read &amp; Watch</span></div>
+      <h2 style="color: var(--paper)">The <span class="italic">knowledge hub</span></h2>
+      <p class="lede">A short shelf for young inventors: books that are actually good, free official guides, and where this program came from.</p>
+      <button class="section-print-btn" onclick="printSection('knowledge')">⎙ Print this section</button>
+    </div>
+    <div class="kn-grid" id="knGrid"></div>
+  </div>
+</section>
+
+<!-- GLOSSARY — terms are rendered from GLOSSARY (data/glossary.js) -->
+<section class="section lg" id="glossary">
+  <div class="section-inner">
+    <div style="margin-bottom: 8px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">The Language</span></div>
+      <h2>Speak <span class="italic">inventor</span></h2>
+      <p class="lede">The words mentors, counselors, and judges will use, in plain English, with an example. New to all of this? Tap <strong>Start here</strong>.</p>
+      <button class="section-print-btn" onclick="printSection('glossary')">⎙ Print this section</button>
+    </div>
+    <input type="text" class="gloss-search" id="glossSearch" aria-label="Search glossary terms" placeholder="Search terms… (e.g. prototype, patent, margin)" oninput="filterGlossary()" />
+    <div class="gloss-chips" role="group" aria-label="Filter glossary by category">
+      <button class="gloss-chip active" data-cat="all" aria-pressed="true" onclick="filterGlossCat(this)">All</button>
+      <button class="gloss-chip start" data-cat="start" aria-pressed="false" onclick="filterGlossCat(this)">★ Start here</button>
+      <button class="gloss-chip" data-cat="Making & Prototyping" aria-pressed="false" onclick="filterGlossCat(this)">Making &amp; Prototyping</button>
+      <button class="gloss-chip" data-cat="Users & Markets" aria-pressed="false" onclick="filterGlossCat(this)">Users &amp; Markets</button>
+      <button class="gloss-chip" data-cat="Money" aria-pressed="false" onclick="filterGlossCat(this)">Money</button>
+      <button class="gloss-chip" data-cat="Protecting Ideas" aria-pressed="false" onclick="filterGlossCat(this)">Protecting Ideas</button>
+      <button class="gloss-chip" data-cat="Scouting & This Program" aria-pressed="false" onclick="filterGlossCat(this)">Scouting &amp; This Program</button>
+    </div>
+    <div class="gloss-count" id="glossCount" aria-live="polite"></div>
+    <div class="gloss-grid" id="glossGrid"></div>
+    <p class="gloss-empty" id="glossEmpty">No terms match your search.</p>
+  </div>
+</section>
+
+<!-- BEYOND THE GUIDEBOOK — rows are rendered from BEYOND (data/beyond.js) -->
+<section class="section lg alt" id="beyond">
+  <div class="section-inner">
+    <div style="margin-bottom: 48px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">Beyond the Guidebook</span></div>
+      <h2>Take it <span class="italic">national</span></h2>
+      <p class="lede">Once your invention has been through a council competition, these national programs are open to students your age. Each one runs on its own rules and dates, so check the site, and sign up with a parent.</p>
+      <p class="comp-note">External programs. Ages, rules, and dates change every year; confirm on each site. Last reviewed <time data-reviewed="beyond"></time>.</p>
+      <button class="section-print-btn" onclick="printSection('beyond')">⎙ Print this section</button>
+    </div>
+    <div class="beyond-block">
+      <h3 class="beyond-sub">Invention and science competitions</h3>
+      <div class="comp-grid" data-beyond="invention"></div>
+    </div>
+    <div class="beyond-block">
+      <h3 class="beyond-sub">Business and entrepreneurship</h3>
+      <div class="comp-grid" data-beyond="business"></div>
+    </div>
+    <div class="beyond-block">
+      <h3 class="beyond-sub">Build teams and scholarships</h3>
+      <div class="comp-grid" data-beyond="build"></div>
+    </div>
+  </div>
+</section>
+
+<!-- INVENTORS WHO STARTED YOUNG — rendered from INVENTORS (data/inventors.js) -->
+<section class="section lg" id="inventors">
+  <div class="section-inner">
+    <div style="margin-bottom: 64px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">They Started Young</span></div>
+      <h2>Inventors who were <span class="italic">your age</span></h2>
+      <p class="lede">Every one of these inventors started between 11 and 18, usually with a problem that bugged them or someone they cared about. Read how they did it, and borrow one move.</p>
+      <button class="section-print-btn" onclick="printSection('inventors')">⎙ Print this section</button>
+    </div>
+    <div class="alumni-grid" id="alumniGrid"></div>
+  </div>
+</section>
+
+<!-- BY THE NUMBERS — computed tiles plus OUTCOMES (data/wins.js) -->
+<section class="section lg alt" id="outcomes">
+  <div class="section-inner">
+    <div style="margin-bottom: 40px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">By The Numbers</span></div>
+      <h2>What this <span class="italic">adds up to</span></h2>
+      <p class="lede">What is in this guidebook, counted from the page, and what Scouts in the program did last year, from the council's annual report.</p>
+    </div>
+    <div class="kpi-row" id="kpiComputed"></div>
+    <div class="kpi-reported" id="kpiFacts"></div>
+    <div class="kpi-reported" id="kpiReported"></div>
+  </div>
+</section>
+
+<!-- PEOPLE — rendered from CONTACTS and DOORS (data/contacts.js) -->
+<section class="section lg" id="people">
+  <div class="section-inner">
+    <div style="margin-bottom: 48px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">The People</span></div>
+      <h2>Who can <span class="italic">help</span></h2>
+      <p class="lede">The two barriers young inventors name most are equipment and mentors. The equipment is in the Innovation Space and at the Lake. These are the people. Start with the adults you already know; every path to a new one runs through them.</p>
+      <button class="section-print-btn" onclick="printSection('people')">⎙ Print this section</button>
+    </div>
+    <div class="doors" id="doors" role="region" aria-label="Who do I talk to first?"></div>
+    <div class="intro-callout">
+      <div class="intro-callout-text">
+        <h3>Ask for a mentor</h3>
+        <p>Trulaske students, faculty, and alumni founders help with the business half: who would buy it, what to charge, how to pitch, and later, patents and licensing. Send the request with a parent or guardian copied. We reply to both of you, and mentors meet teams at the Innovation Space or at events, with other adults present.</p>
+      </div>
+      <div class="intro-callout-actions">
+        <a href="#" class="intro-callout-btn" data-mentor="people">✦ Ask for a mentor</a>
+        <a href="#" class="intro-callout-btn quiet" data-built="people">I built something</a>
+      </div>
+    </div>
+    <div class="contacts-grid" id="contactsGrid"></div>
+  </div>
+</section>
+
+<!-- SAFETY & PRIVACY -->
+<section class="section lg dark" id="safety">
+  <div class="section-inner" style="position: relative;">
+    <div style="margin-bottom: 48px; max-width: 48rem;">
+      <div class="section-label" style="color: var(--gold)"><div class="line"></div><span class="lbl">Safety First</span></div>
+      <h2 style="color: var(--paper)">Safe, <span class="italic">every time</span></h2>
+      <p class="lede">Know the rules the adults follow, so you know what normal looks like. If something ever feels wrong, you can always say no, leave, and tell someone.</p>
+      <button class="section-print-btn" onclick="printSection('safety')">⎙ Print this section</button>
+    </div>
+    <div class="safety-grid">
+      <div class="safety-card">
+        <h3>Rules every mentor follows</h3>
+        <ul>
+          <li>Every mentor completes Scouting America Youth Protection Training and registers with the council before working with Scouts.</li>
+          <li>Two-deep leadership: at least two registered adults at every activity.</li>
+          <li>No adult is ever alone with you, in person, online, by text, or by video.</li>
+          <li>A parent or another leader is copied on every email or message to you.</li>
+          <li>Mentors meet teams in public program spaces, like the Innovation Space, never at their home or yours.</li>
+        </ul>
+      </div>
+      <div class="safety-card">
+        <h3>If something feels wrong</h3>
+        <ul>
+          <li>You can say no to anything that makes you uncomfortable, and leave.</li>
+          <li>Tell your parent, your Scoutmaster, or another adult you trust, right away.</li>
+          <li>Scouting America's Scouts First Helpline, 24 hours, call or text: <a href="tel:+18447268871">1-844-SCOUTS1 (1-844-726-8871)</a>.</li>
+          <li>If anyone is in danger, call 911.</li>
+        </ul>
+      </div>
+      <div class="safety-card">
+        <h3>Your privacy on this page</h3>
+        <ul>
+          <li>This page sends nothing anywhere. Your path, notebook, ladder, and calculator numbers are saved only in this browser.</li>
+          <li>No tracking or analytics run on this page.</li>
+          <li>The email buttons open your own email app with a draft. Nothing is sent until you, or the parent you copy, press send.</li>
+          <li>Use your first name only. On a shared computer, download a backup and clear the notebook when you're done.</li>
+        </ul>
+      </div>
+      <div class="safety-card">
+        <h3>Shop, money, and online</h3>
+        <ul>
+          <li>Never use a new tool without a trained adult's briefing, safety glasses, and a buddy.</li>
+          <li>Never pay, or let anyone ask your family to pay, a company to "patent and market" your idea.</li>
+          <li>Never sign anything, give card numbers, or agree to a "partnership" without a parent.</li>
+          <li>Don't message strangers about your invention online. Interviews happen with people you and your parents know.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cei-note" style="color:#c5cfdb"><a href="https://www.scouting.org/training/youth-protection/" target="_blank" rel="noopener" style="color:#fff">Scouting America Youth Protection</a> · <a href="https://www.scouting.org/health-and-safety/gss/" target="_blank" rel="noopener" style="color:#fff">Guide to Safe Scouting</a></p>
+  </div>
+</section>
+
+<!-- FOR ADULTS -->
+<section class="section lg alt" id="adults">
+  <div class="section-inner">
+    <div style="margin-bottom: 40px; max-width: 48rem;">
+      <div class="section-label"><div class="line"></div><span class="lbl">For Parents, Leaders &amp; Mentors</span></div>
+      <h2>For the <span class="italic">adults</span></h2>
+      <p class="lede">The guidebook is written for Scouts, but it works best with an adult nearby. Here is how it fits the Invention Scouts program and what each of you can do.</p>
+      <button class="section-print-btn" onclick="printSection('adults')">⎙ Print this section</button>
+    </div>
+
+    <h3 class="beyond-sub">How the guidebook lines up with the Invention Scouts four-stage model</h3>
+    <div class="rubric-table map-table" role="table" aria-label="Guidebook stages and Invention Scouts stages">
+      <div class="rubric-row head" role="row"><span role="columnheader">Invention Scouts stage</span><span role="columnheader">Guidebook stages</span><span role="columnheader">What happens</span></div>
+      <div class="rubric-row" role="row"><span role="cell"><b>1 · Find and grow</b></span><span role="cell">0 Curious, 1 Find it, 2 Build it</span><span role="cell">Merit badges, unit challenges, the summer-camp Startup program, Invention Rangers in units</span></div>
+      <div class="rubric-row" role="row"><span role="cell"><b>2 · Competitions and higher-level growth</b></span><span role="cell">3 Prove it</span><span role="cell">The competition ladder from unit to national, user testing, the business case, invention-focused Eagle projects</span></div>
+      <div class="rubric-row" role="row"><span role="cell"><b>3 · Patents</b></span><span role="cell">4 Launch it</span><span role="cell">Prior-art search, plain-language IP, professional inventors and attorneys, the NAI certificate pathway</span></div>
+      <div class="rubric-row" role="row"><span role="cell"><b>4 · Commercialization and licensing</b></span><span role="cell">4 Launch it</span><span role="cell">Making in quantity, first sales, licensing, with mentors throughout</span></div>
+    </div>
+
+    <div class="safety-grid light" style="margin-top:40px">
+      <div class="safety-card">
+        <h3>Parents and guardians</h3>
+        <ul>
+          <li>Ask your Scout to show you their notebook. It's the best window into what they're learning.</li>
+          <li>Everything on this page stays on your device. Nothing collects your Scout's information.</li>
+          <li>Mentor requests and "I built something" emails are drafts that ask you to be copied. Mentors reply to you and your Scout together.</li>
+          <li>Anything with money, sales, accounts, patents, or contracts needs you. The guidebook says so at every step.</li>
+        </ul>
+      </div>
+      <div class="safety-card">
+        <h3>Scoutmasters and Invention Rangers</h3>
+        <ul>
+          <li>Run a <a href="#challenges" onclick="scrollToSection('challenges'); return false;">patrol challenge</a> at a meeting; each ends with a prompt to start a notebook.</li>
+          <li>Review notebooks once a month. Ask what changed between versions and why.</li>
+          <li>Sign ladder rungs from the printed sheet (pilot; the council sets final requirements).</li>
+          <li><a id="nominateScout" href="#">Nominate a Scout</a> who keeps building after the badge is signed. That Scout is the inventor.</li>
+        </ul>
+      </div>
+      <div class="safety-card">
+        <h3>Mentors</h3>
+        <ul>
+          <li>Complete Youth Protection Training, register with the council, and take the two-hour CEI mentor module before any contact.</li>
+          <li>Coach, don't do. Ask questions; let the Scout make the decisions and the notebook entries.</li>
+          <li>Meet teams in program spaces with two adults present. Copy a parent on every message.</li>
+          <li>Refer upward when a Scout needs it: student mentor to faculty to alumni founder or attorney.</li>
+        </ul>
+      </div>
+      <div class="safety-card">
+        <h3>Other councils and schools</h3>
+        <ul>
+          <li>The guidebook is council-agnostic: the content lives in plain data files and can be adapted in an afternoon.</li>
+          <li>Any council adding Invention Scouts can adopt it, and any business school can plug in as the mentor partner.</li>
+          <li>See <a href="ADOPTING.md">ADOPTING.md</a> in the source repository.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="cei-note">Invention Scouts was created by Dr. Jeanne Cairns Sinquefield within the Great Rivers Council. This guidebook was built by the Trulaske Center for Entrepreneurship &amp; Innovation on the platform of the CEI Entrepreneur's Guidebook. It is not an official publication of Scouting America; merit badge requirements and advancement rules come from Scouting America and your council.</p>
+  </div>
+</section>
+
+<!-- FEEDBACK, NOMINATIONS, SHARING -->
+<section class="section lg dark" id="feedback">
+  <div class="section-inner" style="max-width: 48rem;">
+    <div class="section-label"><div class="line"></div><span class="lbl">Help Us Improve</span></div>
+    <h2>What's <span class="italic">missing?</span></h2>
+    <p class="lede" style="margin-bottom: 32px;">This guidebook is new, and Scouts are the best judges of it. A question we didn't answer, a tool we should add, something confusing: tell us.</p>
+    <a href="#" data-feedback="1" class="feedback-cta">Send a suggestion →</a>
+    <div class="nominate" id="nominate">
+      <h3>Report a milestone or a resource</h3>
+      <p>A Scout who earned Inventing, entered a competition, or made a batch? A tool other Scouts should know about? We ask the family's permission before anything is published.</p>
+      <div class="share-actions">
+        <a id="nominateWin" href="#">Report a milestone</a>
+        <a id="nominateResource" href="#">Suggest a resource</a>
+      </div>
+    </div>
+    <div class="share-block" id="share">
+      <div class="share-qr"><canvas id="shareQr" width="320" height="320" role="img" aria-label="QR code that opens this guidebook"></canvas></div>
+      <div>
+        <h3>Share it with your troop</h3>
+        <p>Scan, share, or print the one-page flyer for a troop meeting, a crew night, or the trading post wall.</p>
+        <div class="share-url" id="shareUrl"></div>
+        <div class="share-actions">
+          <button type="button" onclick="sharePage(this)">Share this page</button>
+          <button type="button" onclick="copyLink(this)">Copy link</button>
+          <a id="shareEmail" href="#">Email it</a>
+          <button type="button" onclick="printSection('flyer')">⎙ Print the flyer</button>
+        </div>
+        <p class="share-permanent">Permanent address: <a id="permanentUrl" href="#"></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONE-PAGE FLYER — print only -->
+<section id="flyer" class="flyer" aria-hidden="true">
+  <div class="flyer-inner">
+    <div class="flyer-eyebrow">Invention Scouts · Great Rivers Council · Trulaske Center for Entrepreneurship &amp; Innovation</div>
+    <h2>Got a problem that bugs you? Invent the fix.</h2>
+    <p class="flyer-lede">You don't need a lab, a business, or a big idea. Four ways to start this week, for Scouts aged 12 to 18:</p>
+    <ol class="flyer-list">
+      <li><strong>Run a Problem Hunt</strong> with your patrol: twenty real problems from the last campout in 45 minutes.</li>
+      <li><strong>Open an Inventor's Notebook</strong> in the guidebook. One dated entry: the problem and who has it.</li>
+      <li><strong>Earn Inventing.</strong> Ask your Scoutmaster for a counselor, or sign up at a council merit badge session.</li>
+      <li><strong>Build at the Innovation Space</strong> in Columbia, at the Invention Campus at the Lake, or when an Invention Lab trailer visits.</li>
+    </ol>
+    <div class="flyer-foot">
+      <canvas id="flyerQr" width="320" height="320" role="img" aria-label="QR code that opens this guidebook"></canvas>
+      <div>
+        <div class="flyer-title">The Young Inventor's Guidebook</div>
+        <div class="flyer-url" id="flyerUrl"></div>
+        <div class="flyer-contact">Great Rivers Council · 573-449-2561 · GreatRiversScouting.org</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-mark">The Young Inventor's <span class="italic">Guidebook</span></div>
+        <p>Invention Scouts · Great Rivers Council<br>with the Trulaske Center for Entrepreneurship &amp; Innovation, University of Missouri</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul id="footerNav"></ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>Sinquefield Innovation Space</li>
+          <li>Scouting Adventure Center, Columbia, MO</li>
+          <li><a href="https://greatriversscouting.org/" data-site="councilUrl" target="_blank" rel="noopener" style="text-decoration: underline;">Great Rivers Council ↗</a></li>
+          <li><a href="https://inventionscouts.org/" data-site="programUrl" target="_blank" rel="noopener" style="text-decoration: underline;">Invention Scouts ↗</a></li>
+          <li><a href="https://business.missouri.edu/centers-institutes/center-entrepreneurship-and-innovation" data-site="partnerUrl" target="_blank" rel="noopener" style="text-decoration: underline;">Trulaske CEI ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <div class="footer-contact">Great Rivers Council, Scouting America · 6081 West Van Horn Tavern Road, Columbia, MO 65203 · <a href="tel:+15734492561" data-site="councilPhone">573-449-2561</a> · Mentor program: Trulaske CEI, <a href="mailto:cei@missouri.edu" data-site="email">cei@missouri.edu</a></div>
+        <div class="footer-eeo">Not an official publication of Scouting America. Merit badge requirements and advancement rules come from Scouting America and your council.</div>
+        <div class="footer-copyright">© <span id="copyYear">2026</span> Curators of the University of Missouri. Invention Scouts is a program of the Great Rivers Council.</div>
+        <span class="footer-updated"><span id="lastUpdatedText">Updated</span> · Next scheduled review <time id="nextReview" data-site="nextReview"></time></span>
+        <div class="footer-meta"><a href="docs/PRIVACY.md">Privacy &amp; youth safety</a> · <a href="ADOPTING.md">Adopt this guidebook for your council</a> · <a href="https://github.com/nfajors/inventors" data-site="repoUrl" target="_blank" rel="noopener">Source on GitHub</a></div>
+      </div>
+      <div class="right">
+        <button class="print-btn" onclick="window.print()">⎙ Print the whole guidebook</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHERE ARE YOU? MODAL — content is built by openAssessment() -->
+<div class="modal-overlay" id="assessmentModal" onclick="closeAssessment(event)">
+  <div class="modal" onclick="event.stopPropagation()" role="dialog" aria-modal="true" aria-label="Where are you?">
+    <button class="modal-close" onclick="closeAssessment()" aria-label="Close">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- Editable content: one list per file. See README.md for what lives where. -->
+<script src="data/site.js"></script>
+<script src="data/stages.js"></script>
+<script src="data/resources.js"></script>
+<script src="data/badges.js"></script>
+<script src="data/ladder.js"></script>
+<script src="data/challenges.js"></script>
+<script src="data/opportunities.js"></script>
+<script src="data/changelog.js"></script>
+<script src="data/glossary.js"></script>
+<script src="data/knowledge.js"></script>
+<script src="data/beyond.js"></script>
+<script src="data/inventors.js"></script>
+<script src="data/contacts.js"></script>
+<script src="data/stories.js"></script>
+<script src="data/spotlight.js"></script>
+<script src="data/wins.js"></script>
+<script src="data/prompts.js"></script>
+<script src="assets/vendor/qrcode-generator.js" defer></script>
+<!-- Behaviour -->
+<script src="assets/js/render.js"></script>
+<script src="assets/js/guidebook.js"></script>
+<script src="assets/js/features.js"></script>
+
+</body>
+</html>

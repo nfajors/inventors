@@ -1,0 +1,45 @@
+# The editorial cadence (C6), enforced by the calendar rather than memory.
+# Opens a review issue with the checklist from EDITORIAL.md:
+#   - mid-August:  the fall refresh (Jamboree and camp dates, badges, people)
+#   - mid-January: the spring refresh (summer camp, Merit Badge University, badges)
+#   - first Monday of each month: the light monthly pass (milestones, what's new, link report)
+name: Editorial review reminder
+
+on:
+  schedule:
+    - cron: '0 13 15 8 *'    # 15 August, 13:00 UTC
+    - cron: '0 13 15 1 *'    # 15 January, 13:00 UTC
+    - cron: '0 13 1-7 * 1'   # first Monday of every month, 13:00 UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decide which review is due
+        id: which
+        run: |
+          month=$(date -u +%m); day=$(date -u +%d)
+          if [ "$month" = "08" ] && [ "$day" = "15" ]; then echo "kind=semester" >> "$GITHUB_OUTPUT"; echo "title=Fall refresh of the Young Inventor's Guidebook ($(date -u +%Y))" >> "$GITHUB_OUTPUT";
+          elif [ "$month" = "01" ] && [ "$day" = "15" ]; then echo "kind=semester" >> "$GITHUB_OUTPUT"; echo "title=Spring refresh of the Young Inventor's Guidebook ($(date -u +%Y))" >> "$GITHUB_OUTPUT";
+          else echo "kind=monthly" >> "$GITHUB_OUTPUT"; echo "title=Monthly pass: $(date -u +'%B %Y')" >> "$GITHUB_OUTPUT"; fi
+      - name: Build the checklist
+        run: |
+          {
+            echo "Checklist from [EDITORIAL.md](EDITORIAL.md). Tick each item, then close this issue."
+            echo
+            if [ "${{ steps.which.outputs.kind }}" = "semester" ]; then
+              sed -n '/^## The semester refresh/,/^## /p' EDITORIAL.md | sed '$d'
+            else
+              sed -n '/^## The monthly pass/,/^## /p' EDITORIAL.md | sed '$d'
+            fi
+          } > body.md
+      - uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: ${{ steps.which.outputs.title }}
+          content-filepath: body.md
+          labels: editorial
