@@ -9,12 +9,12 @@ const SPOTLIGHT = {
   eyebrow: 'Start with one badge',
   title: 'Inventing',
   titleGold: 'The merit badge that opens your notebook',
-  lede: 'Inventing walks you through the whole loop: a problem, the people who have it, a design, a prototype, and an honest look at whether it works. Earn it and you have already done Stages 1 and 2 of this guidebook, and the first rung of the ladder after Tinkerer.',
+  lede: 'Merit badges are awards Scouts BSA members earn by completing a set of requirements with a registered adult counselor. There are about 140 of them, and the badge map below shows the ones that build inventors. The best one to start with is Inventing: it walks you through a problem, the people who have it, a design, a prototype, and an honest look at whether it works. When you finish the Inventing merit badge, you will have done Stages 1 and 2 of this guidebook, and it counts toward Builder, the second level of the Young Inventor Ladder.',
   facts: [
     { value: '100+', label: 'Scouts earned Inventing at the 2025 Invention Jamboree' },
     { value: '2026', label: 'Requirements recently revised. Use the official page.' },
-    { value: 'Builder', label: 'The ladder rung it anchors' },
-    { value: 'Stages 1–2', label: 'Find it and Build it' }
+    { value: 'Builder', label: 'The Young Inventor Ladder level it counts toward' },
+    { value: '1 & 2', label: 'The guidebook stages it covers: Find it and Build it' }
   ],
   steps: [
     'Ask your Scoutmaster for an Inventing counselor, or sign up at a council merit badge session.',
