@@ -1,0 +1,84 @@
+# Weekly health check for the Young Inventor's Guidebook:
+#  1. every outbound link is checked with lychee; a single "Broken links" issue is
+#     opened or updated when something fails, so a dead resource is noticed within
+#     a week instead of by a Scout;
+#  2. the data files are validated (scripts/check-site.mjs);
+#  3. calendar.ics is rebuilt from data/opportunities.js and committed if it changed,
+#     so families subscribed to the calendar pick up newly confirmed dates.
+name: Weekly link check
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'   # Mondays, 12:00 UTC (7 a.m. Central)
+  workflow_dispatch:
+  pull_request:
+    paths: ['index.html', 'data/**', 'assets/**', 'scripts/**', '.github/workflows/link-check.yml']
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Validate data files and the permanent address
+        run: node scripts/check-site.mjs
+
+      - name: Rebuild the calendar feed
+        run: node scripts/build-ics.mjs
+
+      - name: Commit the feed if it changed (scheduled runs only)
+        if: github.event_name != 'pull_request'
+        run: |
+          if ! git diff --quiet -- calendar.ics; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add calendar.ics
+            git commit -m "Rebuild calendar.ics from data/opportunities.js"
+            git push
+          fi
+
+      - name: Check links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --timeout 25
+            --max-retries 2
+            --max-concurrency 6
+            --accept 200..=299,403,429
+            --exclude-path assets/vendor
+            --user-agent 'Mozilla/5.0 (compatible; Young-Inventors-Guidebook-LinkCheck/1.0; +https://github.com/nfajors/inventors)'
+            index.html data/*.js
+          fail: false
+          output: lychee-report.md
+
+      - name: Open or update the broken-links issue
+        if: steps.lychee.outputs.exit_code != 0 && github.event_name != 'pull_request'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Broken links in the Young Inventor's Guidebook
+          content-filepath: lychee-report.md
+          labels: links, maintenance
+
+      # On pull requests, only a 4xx (404 Not Found, 410 Gone, ...) fails the check: the
+      # page is gone. Timeouts, connection failures, and 5xx server errors are usually a
+      # site having a bad minute, so they are listed as a warning instead; the Monday run
+      # still reports every failure in the broken-links issue.
+      - name: Fail the pull request on broken links
+        if: steps.lychee.outputs.exit_code != 0 && github.event_name == 'pull_request'
+        run: |
+          cat lychee-report.md
+          if grep -E '\[4[0-9]{2}\] <' lychee-report.md; then
+            echo "::error::The links above return 4xx (gone or not found). Fix or replace them."
+            exit 1
+          fi
+          echo "::warning::Only timeouts, connection failures, or server errors; not failing the pull request. The weekly run will report them if they persist."
